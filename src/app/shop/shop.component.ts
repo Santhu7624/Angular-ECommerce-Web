@@ -81,9 +81,9 @@ export class ShopComponent implements OnInit {
   }
 
   onPageChanged(event: any){
+
     if(this.shopParams.pageNumber !== event){
       this.shopParams.pageNumber = event;
-      this.shopParams.pageNumber=1;
       this.getProducts();
     }
 
@@ -92,6 +92,7 @@ export class ShopComponent implements OnInit {
 
   onSearch(){
     this.shopParams.search = this.searchTemp.nativeElement.value;
+    this.shopParams.pageNumber=1;
     this.getProducts();
   }
 
